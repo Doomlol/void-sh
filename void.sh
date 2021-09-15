@@ -1,31 +1,5 @@
 #!/bin/bash
 
-#
-# - Update the system
-# - Install recommended packages
-# - Install development packages
-# - Install the X Window System (1/13)
-# - Install a Desktop environment (2/13)
-# - Install a Display manager (3/13)
-# - Install a Window manager (4/13)
-# - Install fonts (5/13)
-# - Install an internet browser (6/13)
-# - Install LibreOffice (7/13)
-# - Install GIMP + Inkscape (8/13)
-# - Install QEMU + Virt Manager (9/13)
-# - Install a Terminal emulator (10/13)
-# - Install a Backup program (11/13)
-# - Install a Video player (12/13)
-# - Enable required services (13/13)
-# - Configure Cron
-# - Configure Audio
-# - Configure Network Manager
-# - Configure Bluetooth
-# - Configure Printing support
-# - Configure TLP for notebook power saving
-# - Configure the Display manager
-#
-
 # Color definitions
 
 blue=$(tput setaf 4)
@@ -137,7 +111,7 @@ case $xwinsys in
 	fi
 
 	sudo cp -r 00-keyboard.conf /etc/X11/xorg.conf.d/
-	sudo cp -r 20-libinput.conf /etc/X11/xorg.conf.d/
+	sudo cp -r 20-touchpad.conf /etc/X11/xorg.conf.d/
 
 	echo -n "$green"
 	echo "Done"
@@ -146,7 +120,7 @@ case $xwinsys in
 	# Install a Desktop environment
 	
 	echo -n "$blue"
-	echo "Install a Desktop environment..."
+	echo "Choose a Desktop Environment..."
 	echo -n "$none"
 
 	printf "Possible (type in number): \n
@@ -373,57 +347,6 @@ case $xwinsys in
 		;;
 	esac
 
-	# Install display manager
-	
-	echo -n "$blue"
-	echo "Install a display manageer..."
-	echo -n "$none"
-	printf "Possible (type in number): \n
-	- 1 Lightdm
-	- 2 Emptty
-	- 3 Slim
-	- 0 none\n"
-	
-	read -p "Which display manager do you want? " displaymanager
-	case $displaymanager in
-		1 )
-		echo -n "$blue"
-		echo "Install Lightdm..."		
-		echo -n "$none"		
-		sudo xbps-install lightdm lightdm-gtk3-greeter lightdm-gtk-greeter-settings
-		
-		echo -n "$green"
-		echo "Done"
-		echo -n "$none"			
-		;;
-		
-		2 )
-		echo -n "$blue"
-		echo "Install Emptty..."		
-		echo -n "$none"
-		sudo xbps-install emptty
-
-		echo -n "$green"
-		echo "Done"
-		echo -n "$none"					
-		;;
-
-		3 )
-		echo -n "$blue"
-		echo "Install Slim..."		
-		echo -n "$none"
-		sudo xbps-install slim
-
-		echo -n "$green"
-		echo "Done"
-		echo -n "$none"					
-		;;
-		
-		0 ) 
-			
-		;;
-	esac
-
 	# Install a Window manager
 	echo -n "$blue"
 	echo "Install a Window Manager..."
@@ -595,6 +518,57 @@ case $xwinsys in
 		echo -n "$none"
 		;;
 
+		0 ) 
+			
+		;;
+	esac
+	
+	# Install display manager
+	
+	echo -n "$blue"
+	echo "Install a display manageer..."
+	echo -n "$none"
+	printf "Possible (type in number): \n
+	- 1 Lightdm
+	- 2 Emptty
+	- 3 Slim
+	- 0 Skip\n"
+	
+	read -p "Which display manager do you want? " displaymanager
+	case $displaymanager in
+		1 )
+		echo -n "$blue"
+		echo "Install Lightdm..."		
+		echo -n "$none"		
+		sudo xbps-install lightdm lightdm-gtk3-greeter lightdm-gtk-greeter-settings
+		
+		echo -n "$green"
+		echo "Done"
+		echo -n "$none"			
+		;;
+		
+		2 )
+		echo -n "$blue"
+		echo "Install Emptty..."		
+		echo -n "$none"
+		sudo xbps-install emptty
+
+		echo -n "$green"
+		echo "Done"
+		echo -n "$none"					
+		;;
+
+		3 )
+		echo -n "$blue"
+		echo "Install Slim..."		
+		echo -n "$none"
+		sudo xbps-install slim
+
+		echo -n "$green"
+		echo "Done"
+		echo -n "$none"					
+		;;
+		
 		0 ) 
 			
 		;;
@@ -926,9 +900,9 @@ case $xwinsys in
 			;;
 	esac
 
-	# Install a Video player
+	# Install a Media player
 	echo -n "$blue"
-	echo "Install a Video player..."
+	echo "Install a Media player..."
 	echo -n "$none"
 	printf "Possible (type in number): \n
 	- 1 mpv
@@ -937,7 +911,7 @@ case $xwinsys in
 	- 4 Totem (part of GNOME)
 	- 0 none\n"
 
-	read -p "Which Video player do you want? " videoplayer
+	read -p "Which Media player do you want? " videoplayer
 	case $videoplayer in
 			1 )
 			

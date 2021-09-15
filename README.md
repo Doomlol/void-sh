@@ -1,58 +1,51 @@
 # void.sh
 
-void-sh is a program written in Bash that configures Void Linux.
+void.sh is a script written in Bash to configure Void Linux.
 
-Don't run as ROOT you will be asked for password if needed!
+## Content of the script
 
-### Content
+* Update the system
+* Install recommended packages
+* Install development packages ***optional***
+* Install another shell and make it the default ***optional***
+* Install the X Window System ***optional***
+	* Choose a Desktop Environment ***optional***
+	* Choose a Window Manager ***optional***
+	* Choose a Display manager ***optional***
+	* Install some fonts ***optional***
+	* Install an internet browser ***optional***
+	* Install LibreOffice ***optional***
+	* Install GIMP + Inkscape ***optional***
+	* Install QEMU + Virt Manager ***optional***
+	* Install a terminal emulator ***optional***
+	* Install a backup utility ***optional***
+	* Install a media player ***optional***
+	* Start required services
+* Configure Cron
+* Configure PulseAudio ***optional***
+* Configure Network Management ***optional***
+* Configure Bluetooth ***optional***
+* Configure Printing support ***optional***
+* Configure TLP for notebook power saving ***optional***
+* Configure the Display manager
+* Start a Display manager ***optional***
 
-- Update the system
-- Install recommended packages
-- Install development packages (optional)
-- Install a other Shell and make it default (optional)
-    - Fish, Zsh
-- Install the X Window System (optional)
-- Install a Desktop environment (3/13) (optional)
-	- Xfce, MATE, GNOME, KDE Plasma, Budgie, Cinnamon, LXQt, Enlightenment,
-	- LXDE, Lumina
-- Install Display Manager (optional)
-    - LightDM, emptty, slim
-- Install a Window manager (optional)
-	- i3wm, Openbox, Fluxbox, bspwm, herbstluftwm, IceWM, awesome, jwm, dwm, FVWM3,
-	- Wayfire, Sway
-- Install fonts (optional)
-- Install an Internet browser (optional)
-	- Firefox, Firefox ESR, Chromium, Qutebrowser, Falkon, Badwolf
-- Install LibreOffice (optional)
-- Install GIMP + Inkscape (optional)
-- Install QEMU + Virt Manager (optional)
-- Install a Terminal emulator (optional)
-	- Alacritty, Xterm, VXTerminal, Yakuake, Sakura, Kitty
-- Install a Backup program (optional)
-	- Borg, Deja-dup, Timeshift
-- Install a Video player (optional)
-	- mpv, VLC, Parole, Totem
-- Enable required services 
-- Configure Cron
-- Configure PulseAudio (optional)
-- Configure Network Management (optional)
-	- Connman, Network Manager
-- Configure Bluetooth (optional)
-- Configure Printing support (optional)
-- Configure TLP for notebook power saving (optional)
-- Configure the Display manager (REQUIRES STEP 3/4)
-- Start the Display manager (optional)
-### How to use
+## How to use
 
-Please make sure git is installed: <br><br>
-`xbps-install -S git`
+* Check if you have installed the following packages:
 
-Then run: <br><br>
-`git clone https://codeberg.org/fsraven/void-sh.git` <br>
+`xbps-install git`
+
+* Clone the repository:
+
+`git clone https://codeberg.org/fsraven/void-sh.git`
+
+* Execute the script **without root privileges**:
+
 `cd void-sh` <br>
 `sh void.sh`
 
-### Notes
+## Notes
 
-- This program is not part of Void Linux.
-- This program must be more tested for use on production systems.
+* The void.sh script is not part of Void Linux, nor has it been developed by Void Linux developers.
+* Use this script entirely at your own risk. Informations about the changes can be found in the CHANGES.md.

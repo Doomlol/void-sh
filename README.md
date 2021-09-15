@@ -48,7 +48,7 @@ Please make sure git is installed: <br><br>
 `xbps-install -S git`
 
 Then run: <br><br>
-`git clone https://codeberg.org/fossraven/void-sh.git` <br>
+`git clone https://codeberg.org/fsraven/void-sh.git` <br>
 `cd void-sh` <br>
 `sh void.sh`
 

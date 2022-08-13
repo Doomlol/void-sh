@@ -1,6 +1,6 @@
 # void.sh
 
-THE PROJECT COULD BE CONTINUED IN THE FUTURE BUT NOT IN THIS REPOSITORY AND IN THIS FORM.
+THE PROJECT COULD BE CONTINUED IN THE FUTURE.
 
 void.sh is a script written in Bash to configure Void Linux.
 

@@ -1,5 +1,7 @@
 # void.sh
 
+THE PROJECT COULD BE CONTINUED IN THE FUTURE BUT NOT IN THIS REPOSITORY AND IN THIS FORM.
+
 void.sh is a script written in Bash to configure Void Linux.
 
 Don't run as ROOT you will be asked for password if needed!
